@@ -167,3 +167,28 @@ app.listen(port, () => {
 // A different origin is defined by having a different protocol, domain, or port. Even though both use localhost, their ports (51726 vs. 3000) are different, so the browser enforces CORS.
 
 //npm install cors
+
+//1. For Local Development
+// If you are running the backend on your local machine:
+// For the same machine (localhost): Use http://127.0.0.1:3000 or http://localhost:3000.
+
+// Example: When testing your app from your local browser or emulator.
+// For Android Emulator: Use http://10.0.2.2:3000 because 10.0.2.2 is a special IP address that the Android emulator uses to access the host machine.
+
+// For iOS Simulator: Use http://localhost:3000. The iOS simulator can access your machine's localhost directly.
+
+// For Other Devices on the Same Network: Find your local IP address:
+
+// On macOS: Run ifconfig in the terminal, and look for inet under en0 (your active network interface).
+// On Windows: Run ipconfig in the Command Prompt.
+// Example IP: http://192.168.1.66:3000.
+// Use the IP address from the above step as the backend URL if testing from another device.
+
+// 2. For Deployed Servers
+// If your backend is deployed to a cloud hosting provider or a server (e.g., AWS, Heroku, Vercel):
+// Your backend will have a public domain or IP address.
+// Example:
+// AWS: https://your-backend-app.amazonaws.com
+// Heroku: https://your-backend-app.herokuapp.com
+// Vercel: https://your-backend-app.vercel.app
+// Replace http://127.0.0.1:3000 with the deployed backend URL.
